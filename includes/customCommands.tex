@@ -1,0 +1,95 @@
+
+% Custom commands %%%%%%%%%%%%%%%%%%%
+
+% Command:  /lip
+%
+% Generates a lorem ipsum of size 3 paragraphs
+\newcommand{\lip}[0]{\Blindtext[3][1]}
+
+% Command:  /lipc{x}{y}
+%
+% Generates a custom-size lorem ipsum of size x paragraphs with y repetitions
+\newcommand{\lipc}[2]{\Blindtext[#1][#2]}
+
+% Command:  /ii{<text>}
+%
+% Abbreviation for /textit command 
+\newcommand{\ii}[1]{\textit{#1}}
+
+
+% Command:  /bb{<text>}
+%
+% Abbreviation for /bb command 
+\newcommand{\bb}[1]{\textbf{#1}}
+
+
+% Command:  /itbf{<text>}
+%
+%  Abbreviation for \item \textbf{<text>} command 
+\newcommand{\itbf}[1]{\item\textbf{#1}}
+
+% Command:  /code{<text>}
+%
+%  Creates a color box 
+\newcommand{\code}[1]{\colorbox{lightgray}{{\texttt{#1}}}}
+
+
+
+\newcommand{\defaultHeader}{
+\fancyhead[LO]{\rightmark}
+\fancyhead[RE]{\leftmark}
+}
+
+\renewcommand{\headrulewidth}{0.2pt}
+\renewcommand{\chaptermark}[1]{
+\markboth{\textsc{\chaptertitlename\ \thechapter.}\ #1}{}%
+}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+
+\newcommand{\cabeceraEspecial}[1]{
+\fancyhead[LO]{\textsc{#1}} 
+\fancyhead[RE]{\textsc{#1}}
+}
+
+\newcommand{\imagen}[2]{%
+\includegraphics[#2]{Imagenes/#1}%
+}
+
+\newcommand{\img}[4]{%
+\begin{figure}[t]%
+\begin{center}%
+\imagen{#1}{#2}%
+\caption{#4.} \label{#3}%
+\end{center}%
+\end{figure}%
+} % \newcommand{\img}
+
+\newcommand{\imgf}[4]{%
+\begin{figure}[ht!]%
+\begin{center}%
+\imagen{#1}{#2}%
+\caption{#3.} \label{#4}%
+\end{center}%
+\end{figure}%
+} % \newcommand{\figura}
+
+
+\newcommand{\imgdesc}[5]{%
+\begin{figure}[t]%
+\begin{center}%
+\imagen{#1}{#2}%
+\caption[#5]{#4} \label{#3}%
+\end{center}%
+\end{figure}%
+}
+
+\newcommand{\newquote}[2]{
+\begin{list}{}{%
+     \setlength{\leftmargin}{0.38\textwidth}% 
+     \setlength{\parsep}{0cm}% 
+     \addtolength{\topsep}{0.5cm}%
+   }
+    \item \begin{flushright}\small\em #1 \end{flushright}
+   \item \begin{flushright}\footnotesize #2 \end{flushright}
+  \unskip \end{list}
+}

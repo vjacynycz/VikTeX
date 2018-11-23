@@ -1,0 +1,141 @@
+ 
+\pdfbookmark{\stitle}{title}
+
+  \newlength{\cambioIzquierdo} \setlength{\cambioIzquierdo}{1in + \hoffset +
+    \oddsidemargin}
+
+  \newlength{\cambioDerecho} \setlength{\cambioDerecho}{\cambioIzquierdo +
+    \textwidth} \setlength{\cambioDerecho}{\paperwidth - \cambioDerecho}
+
+
+  \newlength{\margenPortada} \setlength{\margenPortada}{3.5cm}
+
+  \setlength{\cambioIzquierdo}{\cambioIzquierdo - \margenPortada}
+  \setlength{\cambioDerecho}{\cambioDerecho - \margenPortada}
+
+  
+  \thispagestyle{empty}
+
+  \newgeometry{inner=2cm,outer=3cm,top=2cm}
+
+  \newlength{\evensidemarginOriginal}
+  \setlength{\evensidemarginOriginal}{\evensidemargin}
+
+  \newlength{\oddsidemarginOriginal}
+  \setlength{\oddsidemarginOriginal}{\oddsidemargin}
+
+  \setlength{\evensidemargin}{0cm} \setlength{\oddsidemargin}{0cm}
+
+  \begin{huge}
+    \mbox{ } \vfill %
+    \begin{center}
+      \rule{\linewidth}{.5mm}\leavevmode \\\relax \vskip 1cm
+      \textbf{\ltitle} \vskip 0.7cm
+      \rule{\linewidth}{.5mm}\leavevmode \\\relax
+    \end{center}
+  \end{huge}
+
+  \vfill %
+
+\begin{center}
+  \includegraphics[scale=\coverImageScale]{\coverImage}
+\end{center}
+
+\vfill %
+
+\begin{center}
+  {\Large \textbf{\doctype}} \\[2em]
+  \degree
+\end{center}
+
+\vfill
+
+\begin{large}
+
+\begin{center}
+  \textbf{\authors}%\leavevmode \\[0.3cm] 
+
+
+  \leavevmode \\\relax \mbox{ }% \leavevmode \\% \mbox{ } \leavevmode \\
+  \secondSubtitle \leavevmode \\[0.3em]
+  \leavevmode \\\relax \mbox{ }% \leavevmode \\ \mbox{ } \leavevmode \\
+
+  \textbf{\institution}\leavevmode \\[1em]
+  \textbf{\publicationdate}
+
+\end{center}
+
+\end{large}
+
+\vfill %
+
+
+\restoregeometry
+
+
+\newpage
+
+\thispagestyle{empty} \mbox{ } \vfill%space*{4cm}
+\begin{small}
+  \begin{center}
+    Document made with \viktex \viktexver based on \texis\mbox{ } 
+  \end{center}
+\end{small}
+\vspace*{2cm}
+\begin{small}
+  \begin{center}
+    \noindent This document is prepared for duble-side printing. 
+  \end{center}
+\end{small}
+
+%%%
+% Segunda portada
+%%%
+
+\newpage
+
+\thispagestyle{empty}
+
+\mbox{ }
+
+\begin{Huge}
+  \begin{center}
+    \ltitle
+  \end{center}
+\end{Huge}
+
+\vfill %
+
+\begin{large}
+  \begin{center}
+    \firstSubtitle\ \leavevmode \\\relax \mbox{ } \leavevmode
+    \\\relax \mbox{ } \leavevmode \\\relax
+    \degreeMultilang \\\relax
+    \secondSubtitle \leavevmode \\[0.3em]
+  \end{center}
+\end{large}
+
+\vfill %
+
+\begin{large}
+  \begin{center}
+    \textbf{\institution}\leavevmode \\[0.2em]
+    \mbox{ } \leavevmode \\\relax \textbf{\publicationdate}
+  \end{center}
+\end{large}
+
+
+\newpage
+\thispagestyle{empty} \mbox{ }
+\licensepage
+\newpage
+\thispagestyle{empty} \mbox{ }
+\customPostLicence
+
+
+
+%%%
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Tesis.tex"
+%%% End:

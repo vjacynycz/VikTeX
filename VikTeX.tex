@@ -1,0 +1,56 @@
+
+\documentclass[11pt,a4paper,twoside]{book}
+
+\include{packages}
+\include{config}
+\include{definitions}
+\include{includes/customCommands}
+\include{includes/setup}
+
+
+\begin{document}
+
+\frontmatter
+
+\include{includes/cover}
+
+\include{includes/dedication}
+
+\include{includes/acknowledgments}
+
+\include{includes/abstract}
+
+\include{includes/indexes}
+
+\mainmatter \defaultHeader
+
+%\include{chapters/1_0_part1}
+\include{chapters/1_1_introduction}
+\include{chapters/1_2_background}
+%\include{chapters/2_0_part2}
+\include{chapters/2_1_discussion}
+\include{chapters/2_2_conclusion}
+
+% Appendices
+\appendix
+\include{appendix/1_sourcecode}
+
+\backmatter
+
+%
+% Bibliography 
+%
+
+\include{includes/bibliography}
+
+
+\include{includes/end}
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

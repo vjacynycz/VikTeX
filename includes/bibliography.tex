@@ -1,0 +1,35 @@
+\def\bibfiles{bibliography}
+
+\def\bibquote{
+\newquote{You act, and you know why you act, but you don't know why you know that
+  you know what you do?} % quote text 
+{The name of the rose - Umberto eco} % source
+}
+
+
+
+\let\oldbibpreamble\bibpreamble
+
+\def\bibpreamble{%
+\oldbibpreamble
+\addcontentsline{toc}{part}{Bibliography}
+\label{bibliography}
+\bibquote
+}
+
+
+
+\begingroup
+\spanishdeactivate{~}
+\bibliographystyle{IEEEtran}
+\bibliography{\bibfiles}
+\endgroup
+\cabeceraEspecial{Bibliography}
+
+
+%%%
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Tesis.tex"
+%%% End:
+
