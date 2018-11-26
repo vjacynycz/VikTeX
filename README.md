@@ -19,6 +19,18 @@ or download the zip [here](https://github.com/Jacynycz/VikTeX/archive/master.zip
 
 The file ```VikTeX.tex``` contains the main compilation script.
 
+If you want to add a chapter or an appendix, you should create a ```.tex``` file in the corresponding directory and add a line in the main compilation sctript.
+
+For example, if you want to add a new chapter before part 2 named "Technology", create a file ```1_3_technology.tex``` in the ```chapters``` directory. Then add the following line:
+
+```TeX
+\include{chapters/1_2_background}
+\include{chapters/1_3_technology} % <--- Add this line
+\include{chapters/2_0_part2}
+```
+
+---
+
 The file ```definitions.tex``` contains a series of strings used by the template to generate the document. This strings are defined using the LaTeX command ```\def``` and must be modified.
 
 For example, if you want to change the document title to 'Using a latex template to create my thesis' you need to edit the line:
@@ -32,7 +44,11 @@ For the following:
 \def\ltitle{Using a latex template to create my thesis}
 ```
 
-TODO
+---
+
+The directory ```includes``` some files needed to configure the document creation.
+
+TODO,
 
 ## Custom commands
 
