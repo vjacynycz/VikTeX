@@ -2,7 +2,13 @@
 
 This template is prepared to create quality theses and similar documents.
 
+Disclaimer: This template is based on [TeXiS](http://gaia.fdi.ucm.es/research/texis/) created by Marco Antonio Gómez Martín and Pedro Pablo Gómez Martín, members of [GAIA](http://gaia.fdi.ucm.es/) at the Complutense University of Madrid.
+
+
+VikTeX is a modified version of TeXiS created by [Viktor Jacynycz](https://jacynycz.es).
+
 ## Requirements
+
 First you need to install a Latex distribution like [TeX Live](https://www.tug.org/texlive/) or [MiKTeX](https://miktex.org/).
 
 ## Template download
@@ -19,7 +25,7 @@ or download the zip [here](https://github.com/Jacynycz/VikTeX/archive/master.zip
 
 The file ```VikTeX.tex``` contains the main compilation script.
 
-If you want to add a chapter or an appendix, you should create a ```.tex``` file in the corresponding directory and add a line in the main compilation sctript.
+If you want to add a chapter or an appendix, you should create a ```.tex``` file in the corresponding directory and add a line in the main compilation script.
 
 For example, if you want to add a new chapter before part 2 named "Technology", create a file ```1_3_technology.tex``` in the ```chapters``` directory. Then add the following line:
 
@@ -63,6 +69,12 @@ The command ```make clean``` deletes all the auxiliary files created by latex an
 ### Issues and questions
 
 Feel free to report an issue via [this page](https://github.com/Jacynycz/VikTeX/issues) or send me an email to ```vsjg@ucm.es```.
+
+### Contributing (a.k.a. TODO list):
+
+- Complete this README.
+- Add glosstex to be able to add acronyms and a glossary to the document.
+- Comment compilation files
 
 ### Maintainers
 

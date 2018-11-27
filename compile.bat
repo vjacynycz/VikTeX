@@ -1,5 +1,5 @@
-pdflatex -interaction=nonstopmode Tesis
-bibtex Tesis
-pdflatex -interaction=nonstopmode Tesis
-pdflatex -interaction=nonstopmode Tesis
+pdflatex -interaction=nonstopmode VikTeX
+bibtex VikTeX
+pdflatex -interaction=nonstopmode VikTeX
+pdflatex -interaction=nonstopmode VikTeX
 

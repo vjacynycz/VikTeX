@@ -40,3 +40,91 @@
   \newpage
   \if@twocolumn\hbox{}\newpage\fi\fi\fi}
 \makeatother
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%                                   Parts generation setup
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\partTitleVal{}
+\newcommand{\partTitle}[1]{
+\def\partTitleVal{#1}
+}
+
+\def\partDescVal{}
+\newcommand{\partDesc}[1]{
+\def\partDescVal{#1}
+}
+
+\def\partBackTextVal{}
+\newcommand{\partBackText}[1]{
+\def\partBackTextVal{#1}
+}
+
+\newcommand{\makepart}{\part{\partTitleVal}\partDesc{}\partBackText{}\def\tienePartesTeXiS{}}
+\newcommand{\makespart}{\part*{\partTitleVal}\partDesc{}\partBackText{}\def\tienePartesTeXiS{}}
+
+\makeatletter
+\renewcommand\part{
+  \if@openright
+    \cleardoublepage
+  \else
+    \clearpage
+  \fi
+  \thispagestyle{empty}
+  \if@twocolumn
+    \onecolumn
+    \@tempswatrue
+  \else
+    \@tempswafalse
+  \fi
+  \null\vspace*{2cm}
+  \secdef\@part\@spart}
+
+\def\@part[#1]#2{%
+    \ifnum \c@secnumdepth >-2\relax
+      \refstepcounter{part}%
+      \addcontentsline{toc}{part}{\thepart\hspace{1em}#1}%
+    \else
+      \addcontentsline{toc}{part}{#1}%
+    \fi
+    \markboth{}{}%
+    {\centering
+     \interlinepenalty \@M
+     \normalfont
+     \ifnum \c@secnumdepth >-2\relax
+       \huge\bfseries \partname\nobreakspace\thepart
+       \par
+       \vskip 20\p@
+     \fi
+     \Huge \bfseries #2\par}
+    {\vspace*{2cm}\noindent\partDescVal}%
+    \@endpart}
+
+
+\def\@spart#1{%
+    {\centering
+     \interlinepenalty \@M
+     \normalfont
+     \Huge \bfseries #1\par%
+
+    {\vspace*{2cm}\noindent\partDescVal}%
+}%
+    \@endpart}
+
+\def\@endpart{\vfil\newpage
+              \if@twoside
+               \if@openright
+                \null
+                \thispagestyle{empty}%
+                {\partBackTextVal}
+                \newpage
+               \fi
+              \fi
+              \if@tempswa
+                \twocolumn
+              \fi}
+\makeatother
